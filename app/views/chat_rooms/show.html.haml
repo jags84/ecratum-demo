@@ -1,0 +1,16 @@
+.container
+  %h1.text-center Chat Room
+  .row{style: 'padding-top: 100px;'}
+    .col-md-6.col-md-offset-3
+      .messages
+        - @chat_room.messages do |message|
+          .card
+            .card-block
+              .row
+                .col-md-11
+                  %p.card-text
+                    %span.text-muted
+                      = message.user.username
+                      at #{message.created_at} says
+                    %br/
+                    = message.body

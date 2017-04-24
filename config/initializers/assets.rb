@@ -11,5 +11,5 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.js )
 
 Rails.application.config.assets.precompile += %w(*.svg *.eot *.woff *.ttf *.gif *.png *.ico)
-Rails.application.config.assets.precompile += ['application.css','home.css','users.css']
-Rails.application.config.assets.precompile += ['application.js','home.js','users.js']
+Rails.application.config.assets.precompile += ['application.css','home.css','users.css','chat_rooms.css']
+Rails.application.config.assets.precompile += ['application.js','home.js','users.js','chat_rooms.js']
