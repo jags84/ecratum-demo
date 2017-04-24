@@ -12,11 +12,10 @@
           Online Users
 
   .row
-    .col-md-10
+    .col-md-12
       = form_for @message, url: '#' do |f|
         .col-md-8
           .form-group
             = f.text_area :body, class: 'form-control'
-            %small.text-muted From 2 to 1000 characters
         .col-md-4
           = f.submit "Send", class: 'btn btn-primary btn-lg'

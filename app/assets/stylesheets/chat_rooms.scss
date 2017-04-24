@@ -4,8 +4,20 @@
 #messages {
   max-height: 450px;
   overflow-y: auto;
+  overflow-x: hidden;
 }
-
+.avatar{
+  border-radius: 100%;
+  border: 1px solid #424242;
+}
 .border-right{
   border-right: 1px solid #424242;
+}
+.card{
+  padding: 10px;
+  // margin: 4px 0px;
+}
+.dialect_icon{
+  width: 24px;
+  height: 24px;
 }

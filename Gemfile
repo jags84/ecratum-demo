@@ -52,9 +52,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # bootstrap
 gem 'bootstrap-sass'
-
 # haml
 gem 'haml-rails'
-
 # Redis
 gem 'redis', '~> 3.2'
+# Faker
+gem 'faker'
+# httparty
+gem 'httparty'
