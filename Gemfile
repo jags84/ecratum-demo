@@ -55,3 +55,6 @@ gem 'bootstrap-sass'
 
 # haml
 gem 'haml-rails'
+
+# Redis
+gem 'redis', '~> 3.2'

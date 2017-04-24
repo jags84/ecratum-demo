@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'chat_rooms/index'
-
+  mount ActionCable.server => '/cable'
   resources :users
   resources :chat_rooms, only: [:show]
   root to: 'users#new'

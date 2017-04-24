@@ -1,8 +1,10 @@
+ASD
+= session[:current_user_id]
 .container
   %h1.text-center Chat Room
   .row{style: 'padding-top: 100px;'}
     .col-md-6.col-md-offset-3
-      .messages
+      #messages{'data-chat-room-id': @chat_room.id }
         - @chat_room.messages do |message|
           .card
             .card-block
@@ -14,3 +16,10 @@
                       at #{message.created_at} says
                     %br/
                     = message.body
+
+        = form_for @message, url: '#' do |f|
+          .form-group
+            = f.label :body
+            = f.text_area :body, class: 'form-control'
+            %small.text-muted From 2 to 1000 characters
+          = f.submit "Post", class: 'btn btn-primary btn-lg'
