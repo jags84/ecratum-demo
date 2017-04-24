@@ -1,0 +1,10 @@
+.card
+  .card-block
+    .row
+      .col-md-11
+        %p.card-text
+          %span.text-muted
+            = message.user.username
+            at #{message.created_at.strftime('%H:%M:%S %d %B %Y')} says
+          %br/
+          = message.body
