@@ -6,12 +6,14 @@
       .col-md-11.col-xs-11
         %p.card-text
           %span.text-muted
-            = "#{message.user.username} says in"
+            %b
+              = message.user.username
+            says in
           =image_tag(message.user.dialect_icon, class: 'dialect_icon')
           %span.text-muted
             dialect
-          %p
+          %p.messate-text
             = message.body
-          %p.text-muted
+          %p.text-muted.time-ago
             = "#{time_ago_in_words(message.created_at)} ago"
     %hr
