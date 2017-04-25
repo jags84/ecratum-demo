@@ -16,7 +16,9 @@ $ ->
         # Called when the subscription has been terminated by the server
 
       received: (data) ->
+        # Append Message
         messages.append data['message']
+        # Append online users
         if data.status == 'online'
           if $('.data-user-'+data.user_id).length == 0
             users.append data['user']
