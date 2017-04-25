@@ -2,9 +2,10 @@ class User < ApplicationRecord
   require 'securerandom'
   has_many :messages, dependent: :destroy
   after_touch { UserStatusJob.perform_later(self,"online") }
+  after_create :set_avatar
 
-  def avatar
-    Faker::Avatar.image(SecureRandom.hex(8),"48x48")
+  def set_avatar
+    self.update(picture: Faker::Avatar.image(SecureRandom.hex(8),"48x48"))
   end
 
   def dialect_icon
@@ -17,5 +18,10 @@ class User < ApplicationRecord
         'dexter.png'
     end
   end
+
+  private
+   def user_params
+     params.require(:user).permit(:username,:dialect,:picture)
+   end
 
 end
