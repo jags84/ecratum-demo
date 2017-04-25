@@ -5,7 +5,6 @@ class UsersController < ApplicationController
   end
 
   # POST /users
-  # POST /users.json
   def create
     @user = User.new(user_params)
     if @user.save
@@ -13,16 +12,14 @@ class UsersController < ApplicationController
       session[:current_user_id] = @user.id
       redirect_to chat_room_path(ChatRoom.take)
     else
-      format.html { render :new }
+      render :new
     end
   end
 
   def destroy
+    # Set nil to session and current user
     session[:current_user_id] = nil
     current_user = nil
-    p "***** DESTROY *******"
-    p session[:current_user_id]
-    p current_user
     redirect_to new_user_path
   end
 

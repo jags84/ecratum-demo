@@ -39,6 +39,9 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'rspec-json_expectations'
   gem 'factory_girl_rails'
+  gem 'rails-controller-testing'
+  # Shoulda gem
+  gem 'shoulda'
 end
 
 group :development do

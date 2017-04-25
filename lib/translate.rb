@@ -3,7 +3,8 @@ module Translate
   API_URL_FUN = 'http://api.funtranslations.com/translate/'
   API_URL_DEGRAEVE= 'http://www.degraeve.com/cgi-bin/babel.cgi?d=binary&w='
 
-  def self.translate_message message,dialect
+  def self.translate_message message,dialect=nil
+    return nil if (message.nil? || message == '')
     case dialect
       when "Yoda"
         yoda message
@@ -11,6 +12,8 @@ module Translate
         val message
       when "Binary Code"
         binary message
+      else
+        nil
     end
   end
 
