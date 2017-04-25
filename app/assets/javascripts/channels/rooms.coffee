@@ -1,5 +1,6 @@
 $ ->
   messages = $('#messages')
+  users = $('#users')
   if $('#messages').length > 0
     messages_to_bottom = -> messages.scrollTop(messages.prop("scrollHeight"))
     messages_to_bottom()
@@ -16,6 +17,12 @@ $ ->
 
       received: (data) ->
         messages.append data['message']
+        if data.status == 'online'
+          if $('.data-user-'+data.user_id).length == 0
+            users.append data['user']
+        else if data.status == 'offline'
+          $('.data-user-'+data.user).remove()
+
         messages_to_bottom()
 
       send_message: (message, chat_room_id) ->

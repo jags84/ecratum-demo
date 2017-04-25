@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   require 'securerandom'
   has_many :messages, dependent: :destroy
+  after_touch { UserStatusJob.perform_later(self,"online") }
 
   def avatar
     Faker::Avatar.image(SecureRandom.hex(8),"48x48")
@@ -16,4 +17,5 @@ class User < ApplicationRecord
         'dexter.png'
     end
   end
+
 end
