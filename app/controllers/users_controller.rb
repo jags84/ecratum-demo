@@ -17,6 +17,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    session[:current_user_id] = nil
+    current_user = nil
+    p "***** DESTROY *******"
+    p session[:current_user_id]
+    p current_user
+    redirect_to new_user_path
+  end
+
   private
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params

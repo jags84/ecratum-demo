@@ -9,11 +9,17 @@ class ApplicationController < ActionController::Base
       if session[:current_user_id].nil?
         redirect_to new_user_path
       end
+    elsif controller_name == 'users'
+      if action_name == 'new' and !session[:current_user_id].nil?
+        redirect_to chat_room_path(ChatRoom.take)
+      end
     end
   end
 
   def current_user
-    @current_user ||= User.find(session[:current_user_id])
+    unless session[:current_user_id].nil?
+      @current_user ||= User.find(session[:current_user_id])
+    end
   end
 
   def set_cookie

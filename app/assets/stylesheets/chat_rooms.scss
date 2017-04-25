@@ -2,7 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #messages {
-  max-height: 450px;
+  min-height: 450px;
+  max-height: 550px;
   overflow-y: auto;
   overflow-x: hidden;
 }
