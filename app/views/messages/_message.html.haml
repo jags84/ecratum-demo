@@ -1,0 +1,19 @@
+.card
+  .card-block
+    .row
+      .col-md-1.col-xs-1
+        %img.avatar{src: message.user.picture}
+      .col-md-11.col-xs-11
+        %p.card-text
+          %span.text-muted
+            %b
+              = message.user.username
+            says in
+          =image_tag(message.user.dialect_icon, class: 'dialect_icon')
+          %span.text-muted
+            dialect
+          %p.messate-text
+            = message.body
+          %p.text-muted.time-ago
+            = "#{time_ago_in_words(message.created_at)} ago"
+    %hr

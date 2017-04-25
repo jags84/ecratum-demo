@@ -1,0 +1,37 @@
+// Place all the styles related to the ChatRooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#messages {
+  min-height: 450px;
+  max-height: 550px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.avatar{
+  border-radius: 100%;
+  border: 1px solid #424242;
+}
+.online_avatar{
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+  border: 1px solid #424242;
+  float:left;
+  margin-right: 10px;
+}
+.border-right{
+  border-right: 1px solid #424242;
+}
+.card{
+  padding: 10px;
+}
+.dialect_icon{
+  width: 24px;
+  height: 24px;
+}
+.time-ago{
+  font-size: 0.8em;
+}
+.messate-text{
+  font-size: 1.1em;
+}

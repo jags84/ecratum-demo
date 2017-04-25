@@ -1,0 +1,23 @@
+.container
+  .row{style: 'padding-top: 100px;'}
+    .col-md-6.col-md-offset-3
+      .login-panel.panel.panel-default
+        .panel-heading
+          %h3.panel-title Login
+        .panel-body
+          = form_for @user do |f|
+            %fieldset
+              - if @user.errors.any?
+                #error_explanation
+                  %h2= "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
+                  %ul
+                    - @user.errors.full_messages.each do |msg|
+                      %li= msg
+              .form-group
+                = f.label :username
+                = f.text_field :username, class: 'form-control'
+              .form-group
+                = f.label :dialect
+                = f.select :dialect,['Yoda','Valley Girl','Binary Code'], {}, { :class => 'form-control' }
+              .actions
+                = f.submit 'Lets Chat', class: "btn btn-success btn-block"

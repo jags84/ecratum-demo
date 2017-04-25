@@ -1,0 +1,23 @@
+.container
+  -# %h1.text-center Chat Room
+  .row
+    .col-md-12
+      .col-md-10.border-right
+        %h3
+          Chat
+        #messages{'data-chat-room-id': @chat_room.id }
+          = render @chat_room.messages
+      .col-md-2
+        %h3
+          Online Users
+        #users
+          = render @online_users
+
+  .row
+    .col-md-12
+      = form_for @message, url: '#' do |f|
+        .col-md-8
+          .form-group
+            = f.text_area :body, class: 'form-control'
+        .col-md-4
+          = f.submit "Send", class: 'btn btn-primary btn-lg'
